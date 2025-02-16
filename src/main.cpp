@@ -30,13 +30,13 @@ void calcForAngle(const long double angle)
 
 int main()
 {
-    cout << angle120 << " " << maxAmplitude;
+    cout << "angle120=" << angle120 << ", maxAmplitude" << maxAmplitude << endl;
     csv << "angle,sin,vMin,vMax,center,svmPwm0,svmPwm1,svmPwmCenter,svmPwmMinShift" << endl;
     mapSvmPwm0 << "const uint8_t map[] = {";
 
-    for (int i = 0; i < 1000; ++i)
+    for (int i = 0; i < 256; ++i)
     {
-        calcForAngle(i * 2 * M_PI / 1000);
+        calcForAngle(i * 2 * M_PI / 256);
     }
     mapSvmPwm0 << "};" << endl;
 
